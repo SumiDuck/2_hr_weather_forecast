@@ -5,29 +5,30 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       console.log(data);
       const forecasts = data.items[0].forecasts; //Grab the forecasts from the json data.
+
+      //Grab date from forecast start time.
       const isoDate = data.items[0].valid_period.start;
       const formattedDate = dateFns.format(isoDate, "MM/dd/yyyy");
+      document.getElementById("date").textContent = formattedDate;              //Display Date
 
-      //Display Date
-      document.getElementById("date").textContent = formattedDate;
       //Grab time and Format it using library
-      //Find Start Time
-      const timeStart = data.items[0].valid_period.start;
+      const timeStart = data.items[0].valid_period.start;                       //Find Start Time
       const isoStartString = timeStart;
       const dateStart = dateFns.parseISO(isoStartString);
       const formattedStartTime = dateFns.format(dateStart, "h:mm a");
 
-      //Find End Time
-      const timeEnd = data.items[0].valid_period.end;
+
+      const timeEnd = data.items[0].valid_period.end;                            //Find End Time
       const isoEndString = timeEnd;
       const dateEnd = dateFns.parseISO(isoEndString);
       const formattedEndTime = dateFns.format(dateEnd, "h:mm a");
 
-      //Display Time
-      const formattedTime = formattedStartTime + " to " + formattedEndTime;
+
+      const formattedTime = formattedStartTime + " to " + formattedEndTime;      //Display Time
       document.getElementById("time").textContent = formattedTime;
 
       const select = document.getElementById("location");
+
       // Clear existing options
       select.innerHTML = "";
 
@@ -66,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
               forecastData.forecast;
 
             // Set each type of forecast to a awesomefree font icon
-            const forecast = forecastData.forecast; //Define forecast for switch statement
-            let iconClass; //Create variable to store the font-awesome class name that we wanna use.
+            const forecast = forecastData.forecast;                               //Define forecast for switch statement
+            let iconClass;                                                        //Create variable to store the font-awesome class name that we wanna use.
             switch (forecast) {
               case "Fair":
               case "Fair (Day)":
