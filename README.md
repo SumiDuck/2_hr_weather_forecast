@@ -4,7 +4,7 @@ This is a simple tool that checks the 2-hour weather forecast using Singapore's 
 
 ## What It Does
 Displays the latest 2-hour weather forecast for selected areas in Singapore.
-Useful for to plan ahead!
+Useful for planning ahead!
 
 ## How to Use?
 Open the webpage here:
