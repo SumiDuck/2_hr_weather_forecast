@@ -81,16 +81,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 iconClass = "fa-sun";
                 break;
               case "Thundery Showers":
+              case "Heavy Thundery Showers":
+              case "Heavy Thundery Showers with Gusty Winds":
                 iconClass = "fa-cloud-bolt";
                 break;
               case "Showers":
               case "Heavy Showers":
               case "Light Showers":
+              case "Light Rain":
               case "Passing Showers":
+              case "Moderate Rain":
+              case "Heavy Rain":
                 iconClass = "fa-cloud-showers-heavy";
                 break;
               case "Cloudy":
+              case "Mist":
+              case "Fog":
+              case "Hazy":
+              case "Slightly Hazy":
                 iconClass = "fa-cloud";
+                break;
+              case "Windy":
+                iconClass = "fa-wind";
                 break;
               case "Partly Cloudy":
               case "Partly Cloudy (Day)":
